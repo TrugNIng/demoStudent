@@ -18,4 +18,8 @@ public class StudentServiceImpl implements StudentService {
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
     }
+
+    private String check(){
+        return "";
+    }
 }
