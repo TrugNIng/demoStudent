@@ -1,36 +1,31 @@
 package com.example.bkacad.model;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private  Long id;
 
-    @Column(name = "full_name")
-    private String full_name;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "faculty_id")
-    private String faculty_id;
+    @Column(name = "age")
+    private  int age;
 
-    @Column(name = "birthday")
-    private String birthday;
+    @Column(name = "phone")
+    private  String phone;
 
     @Column(name = "address")
-    private String address;
+    private  String address;
 
-    public Long id() {
-        return id;
-    }
-
-    public void d(Long id) {
-        this.id = id;
-    }
 
     public Long getId() {
         return id;
@@ -40,28 +35,28 @@ public class Student {
         this.id = id;
     }
 
-    public String getFull_name() {
-        return full_name;
+    public String getName() {
+        return name;
     }
 
-    public void setFull_name(String full_name) {
-        this.full_name = full_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getFaculty_id() {
-        return faculty_id;
+    public int getAge() {
+        return age;
     }
 
-    public void setFaculty_id(String faculty_id) {
-        this.faculty_id = faculty_id;
+    public void setAge(int age) {
+        this.age = age;
     }
 
-    public String getBirthday() {
-        return birthday;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getAddress() {
@@ -72,3 +67,4 @@ public class Student {
         this.address = address;
     }
 }
+
