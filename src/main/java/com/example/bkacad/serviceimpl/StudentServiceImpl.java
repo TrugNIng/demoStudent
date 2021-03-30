@@ -1,12 +1,16 @@
 package com.example.bkacad.serviceimpl;
 
+import java.util.List;
 import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.example.bkacad.model.Student;
 import com.example.bkacad.repository.StudentRepository;
 import com.example.bkacad.service.StudentService;
+
 
 @Service
 public class StudentServiceImpl implements StudentService {
@@ -27,8 +31,8 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Transactional
-    public Student get(Long id) {
-        Optional<Student> studentResponse = studentRepository.findById(id);
+    public Student get(Long student_id) {
+        Optional<Student> studentResponse = studentRepository.findById(student_id);
         Student getResponse = studentResponse.get();
         return getResponse;
     }
@@ -36,5 +40,34 @@ public class StudentServiceImpl implements StudentService {
     @Transactional
     public void delete(Student student) {
         studentRepository.delete(student);
+    }
+
+    //Số lượng lớn-------------------------
+
+    @Override
+    @Transactional
+    public List<Student> saveAll(List<Student> students) {
+        List<Student> saveResponse = studentRepository.saveAll(students);
+        return saveResponse;
+    }
+
+    @Override
+    @Transactional
+    public List<Student> updateAll(List<Student> students) {
+        List<Student> updateResponse = studentRepository.saveAll(students);
+        return updateResponse;
+    }
+
+    @Override
+    @Transactional
+    public List<Student> getAll() {
+        List<Student> saveResponse = studentRepository.findAll();
+        return saveResponse;
+    }
+
+    @Override
+    @Transactional
+    public void deleteAll(List<Student> students) {
+        studentRepository.deleteAll(students);
     }
 }
