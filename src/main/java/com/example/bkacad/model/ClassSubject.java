@@ -4,6 +4,7 @@ package com.example.bkacad.model;
 import javax.persistence.*;
 
 @Entity
+@Table
 public class ClassSubject {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

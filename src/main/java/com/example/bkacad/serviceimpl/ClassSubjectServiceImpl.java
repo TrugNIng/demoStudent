@@ -12,7 +12,7 @@ import java.util.Optional;
 
 
 @Service
-public class ClassServiceImpl implements ClassSubjectService {
+public class ClassSubjectServiceImpl implements ClassSubjectService {
 
     @Autowired
     private ClassSubjectRepository classSubjectRepository;
