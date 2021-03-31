@@ -14,14 +14,14 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private  Long id;
 
-    @Column(name = "full_name")
-    private String full_name;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "birthday")
-    private  String birthday;
+    @Column(name = "age")
+    private  int age;
 
-    @Column(name = "faculty_id")
-    private  String faculty_id;
+    @Column(name = "phone")
+    private  String phone;
 
     @Column(name = "address")
     private  String address;
@@ -35,29 +35,28 @@ public class Student {
         this.id = id;
     }
 
-    public String getFull_name() {
-        return full_name;
+    public String getName() {
+        return name;
     }
 
-    public void setFull_name(String full_name) {
-        this.full_name = full_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getBirthday() {
-        return birthday;
+    public int getAge() {
+        return age;
     }
 
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
+    public void setAge(int age) {
+        this.age = age;
     }
 
-
-    public String getFaculty_id() {
-        return faculty_id;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setFaculty_id(String faculty_id) {
-        this.faculty_id = faculty_id;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getAddress() {
