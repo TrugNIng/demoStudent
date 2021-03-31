@@ -1,5 +1,6 @@
 package com.example.bkacad.serviceimpl;
 
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,5 +37,25 @@ public class StudentServiceImpl implements StudentService {
     @Transactional
     public void delete(Student student) {
         studentRepository.delete(student);
+    }
+
+    @Override
+    public List<Student> saveAll(List<Student> student) {
+        return null;
+    }
+
+    @Override
+    public List<Student> updateAll(List<Student> student) {
+        return null;
+    }
+
+    @Override
+    public List<Student> getAll() {
+        return null;
+    }
+
+    @Override
+    public void deleteAll(List<Student> student) {
+
     }
 }
