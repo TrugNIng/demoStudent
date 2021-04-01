@@ -21,7 +21,7 @@ public class Student {
     private  String birthday;
 
     @Column(name = "faculty_id")
-    private  String phone;
+    private  String faculty_id;
 
     @Column(name = "address")
     private  String address;
@@ -51,12 +51,13 @@ public class Student {
         this.birthday = birthday;
     }
 
-    public String getPhone() {
-        return phone;
+
+    public String getFaculty_id() {
+        return faculty_id;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setFaculty_id(String faculty_id) {
+        this.faculty_id = faculty_id;
     }
 
     public String getAddress() {
