@@ -1,6 +1,6 @@
 package com.example.bkacad.repository;
 
-import com.example.demo.model.Faculty;
+import com.example.bkacad.model.Faculty;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

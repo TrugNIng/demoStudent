@@ -1,8 +1,8 @@
 package com.example.bkacad.serviceimpl;
 
-import com.example.demo.model.Faculty;
-import com.example.demo.repository.FacultyRepository;
-import com.example.demo.service.FacultyService;
+import com.example.bkacad.model.Faculty;
+import com.example.bkacad.repository.FacultyRepository;
+import com.example.bkacad.service.FacultyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

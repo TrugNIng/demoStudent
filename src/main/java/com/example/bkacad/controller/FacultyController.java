@@ -1,7 +1,7 @@
 package com.example.bkacad.controller;
 
-import com.example.demo.model.Faculty;
-import com.example.demo.service.FacultyService;
+import com.example.bkacad.model.Faculty;
+import com.example.bkacad.service.FacultyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

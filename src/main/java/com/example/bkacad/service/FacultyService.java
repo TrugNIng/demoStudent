@@ -1,6 +1,7 @@
 package com.example.bkacad.service;
 
-import com.example.demo.model.Faculty;
+
+import com.example.bkacad.model.Faculty;
 import org.springframework.stereotype.Component;
 
 
