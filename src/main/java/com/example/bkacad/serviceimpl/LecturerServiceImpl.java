@@ -1,6 +1,9 @@
 package com.example.bkacad.serviceimpl;
 
+import java.util.List;
 import java.util.Optional;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,8 +30,8 @@ public class LecturerServiceImpl implements LecturerService {
     }
 
     @Transactional
-    public Lecturer get(Long id) {
-        Optional<Lecturer> lecturerResponse = lecturerRepository.findById(id);
+    public Lecturer get(Long lecturer_id) {
+        Optional<Lecturer> lecturerResponse = lecturerRepository.findById(lecturer_id);
         Lecturer getResponse = lecturerResponse.get();
         return getResponse;
     }
@@ -36,5 +39,34 @@ public class LecturerServiceImpl implements LecturerService {
     @Transactional
     public void delete(Lecturer lecturer) {
         lecturerRepository.delete(lecturer);
+    }
+
+    //Số lượng lớn-------------------------
+
+    @Override
+    @Transactional
+    public List<Lecturer> saveAll(List<Lecturer> lecturer) {
+        List<Lecturer> saveResponse = lecturerRepository.saveAll(lecturer);
+        return saveResponse;
+    }
+
+    @Override
+    @Transactional
+    public List<Lecturer> updateAll(List<Lecturer> lecturer) {
+        List<Lecturer> updateResponse = lecturerRepository.saveAll(lecturer);
+        return updateResponse;
+    }
+
+    @Override
+    @Transactional
+    public List<Lecturer> getAll() {
+        List<Lecturer> saveResponse = lecturerRepository.findAll();
+        return saveResponse;
+    }
+
+    @Override
+    @Transactional
+    public void deleteAll(List<Lecturer> lecturer) {
+        lecturerRepository.deleteAll(lecturer);
     }
 }
