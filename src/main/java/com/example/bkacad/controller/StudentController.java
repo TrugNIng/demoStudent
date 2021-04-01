@@ -2,8 +2,8 @@ package com.example.bkacad.controller;
 
 
 import com.example.bkacad.model.Student;
-import com.example.bkacad.service.StudentService;
 
+import com.example.bkacad.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
