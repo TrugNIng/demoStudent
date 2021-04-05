@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 
 
 @RestController
@@ -46,6 +47,30 @@ public class StudentController {
         return "Record deleted succesfully";
     }
 
+//    CRUD so nhieu
+@PostMapping("/bulkcreate")
+public List<Student> createStudents(@RequestBody List<Student> students) {
+    List<Student> createResponse = studentService.saveAll(students);
+    return createResponse;
+}
+
+    @PutMapping("/bulkupdate")
+    public List<Student> updateStudents(@RequestBody List<Student> students) {
+        List<Student> updateResponse = studentService.updateAll(students);
+        return updateResponse;
+    }
+
+    @GetMapping("/allstudent")
+    public List<Student> getStudents() {
+        List<Student> getresponse = studentService.getAll();
+        return getresponse;
+    }
+
+    @DeleteMapping("/bulkdelete")
+    public String deleteStudents(@RequestBody List<Student> students) {
+        studentService.deleteAll(students);
+        return "Records deleted succesfully";
+    }
 
 }
 
