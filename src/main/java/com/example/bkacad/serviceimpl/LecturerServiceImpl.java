@@ -52,7 +52,7 @@ public class LecturerServiceImpl implements LecturerService {
 
     @Override
     public List<LecturerDTO> findAll() {
-        List<Lecturer> list =  lecturerRepository..findAll();
+        List<Lecturer> list =  lecturerRepository.findAll();
         List<LecturerDTO> listDTOs = new ArrayList<>();
         list.forEach(lecturer -> {
             LecturerDTO lecturerDTO = new LecturerDTO();
