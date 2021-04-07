@@ -10,19 +10,20 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table
+@Table(name="teacher", schema = "training")
 public class Lecturer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "magv")
     private  Long lecturer_id;
 
-    @Column(name = "lecturer_name")
+    @Column(name = "hotengv")
     private String lecturer_name;
 
-    @Column(name = "salary")
+    @Column(name = "luong")
     private String salary;
 
-    @Column(name= "faculty_id")
+    @Column(name= "makhoa")
     private String faculty_id;
 
     public Long getLecturer_id() {
