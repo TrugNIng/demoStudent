@@ -1,6 +1,8 @@
 package com.example.bkacad.controller;
 
 
+import com.example.bkacad.dto.LecturerDTO;
+import com.example.bkacad.dto.StudentDTO;
 import com.example.bkacad.model.Student;
 
 import com.example.bkacad.service.StudentService;
@@ -70,5 +72,11 @@ public class StudentController {
         return "Records deleted succesfully";
     }
 
+//    DTO
+
+    @GetMapping("/getAllStudent")
+    public List<StudentDTO> getAllStudent(){
+        return  studentService.findAll();
+    }
 }
 

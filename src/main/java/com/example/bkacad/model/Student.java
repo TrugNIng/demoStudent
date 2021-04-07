@@ -1,5 +1,6 @@
 package com.example.bkacad.model;
 
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,32 +8,33 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
-@Table
+@Table(name = "student" , schema = "training")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private  Long id;
+    @Column(name = "masv")
+    private Long student_id;
 
-    @Column(name = "full_name")
+    @Column(name = "hotensv")
     private String full_name;
 
-    @Column(name = "birthday")
-    private  String birthday;
+    @Column(name = "makhoa")
+    private String faculty_id;
 
-    @Column(name = "faculty_id")
-    private  String faculty_id;
+    @Column(name = "namsinh")
+    private String birthday;
 
-    @Column(name = "address")
-    private  String address;
+    @Column(name = "quequan")
+    private String address;
 
-
-    public Long getId() {
-        return id;
+    public Long getStudent_id() {
+        return student_id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setStudent_id(Long student_id) {
+        this.student_id = student_id;
     }
 
     public String getFull_name() {
@@ -51,11 +53,11 @@ public class Student {
         this.birthday = birthday;
     }
 
-    public String getPhone() {
+    public String getFaculty_id() {
         return faculty_id;
     }
 
-    public void setPhone(String phone) {
+    public void setFaculty_id(String faculty_id) {
         this.faculty_id = faculty_id;
     }
 
@@ -66,5 +68,6 @@ public class Student {
     public void setAddress(String address) {
         this.address = address;
     }
+
 }
 

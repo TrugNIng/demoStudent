@@ -1,8 +1,11 @@
 package com.example.bkacad.serviceimpl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+
+import com.example.bkacad.dto.StudentDTO;
 import com.example.bkacad.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -58,5 +61,26 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public void deleteAll(List<Student> student) {
 
+    }
+//    DTO
+    @Override
+
+    public List<Student> getAllStudent() {
+        return studentRepository.getAllStudent();
+    }
+        
+        @Override
+    public List<StudentDTO> findAll() {
+        List<Student> list =  studentRepository.findAll();
+        List<StudentDTO> listDTOs = new ArrayList<>();
+        list.forEach(student -> {
+            StudentDTO studentDTO = new StudentDTO();
+            studentDTO.setHotensv(student.getFull_name());
+            studentDTO.setMasv(student.getStudent_id());
+            studentDTO.setQuequan(student.getAddress());
+            studentDTO.setNamsinh(student.getBirthday());
+            listDTOs.add(studentDTO);
+        });
+        return listDTOs;
     }
 }
