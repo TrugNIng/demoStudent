@@ -10,36 +10,36 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="teacher", schema = "training")
-public class Lecturer {
+@Table
+public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "magv")
-    private  Long lecturer_id;
+    private  Long teacherId;
 
     @Column(name = "hotengv")
-    private String lecturer_name;
+    private String teacherName;
 
     @Column(name = "luong")
     private String salary;
 
     @Column(name= "makhoa")
-    private String faculty_id;
+    private String facultyId;
 
-    public Long getLecturer_id() {
-        return lecturer_id;
+    public Long getTeacherId() {
+        return teacherId;
     }
 
-    public void setLecturer_id(Long lecturer_id) {
-        this.lecturer_id = lecturer_id;
+    public void setTeacherId(Long lecturer_id) {
+        this.teacherId = lecturer_id;
     }
 
-    public String getLecturer_name() {
-        return lecturer_name;
+    public String getTeacherName() {
+        return teacherName;
     }
 
-    public void setLecturer_name(String lecturer_name) {
-        this.lecturer_name = lecturer_name;
+    public void setTeacherName(String lecturer_name) {
+        this.teacherName = lecturer_name;
     }
 
     public String getSalary() {
@@ -50,11 +50,11 @@ public class Lecturer {
         this.salary = salary;
     }
 
-    public String getFaculty_id() {
-        return faculty_id;
+    public String getFacultyId() {
+        return facultyId;
     }
 
-    public void setFaculty_id(String faculty_id) {
-        this.faculty_id = faculty_id;
+    public void setFacultyId(String faculty_id) {
+        this.facultyId = faculty_id;
     }
 }
