@@ -1,5 +1,6 @@
 package com.example.bkacad.serviceimpl;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -12,6 +13,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.example.bkacad.model.Student;
 import com.example.bkacad.repository.StudentRepository;
+
+import javax.persistence.Tuple;
 
 @Service
 public class StudentServiceImpl implements StudentService {
@@ -63,6 +66,7 @@ public class StudentServiceImpl implements StudentService {
 
     }
 //    DTO
+    //lay ra tat ca sinh vien
     @Override
 
     public List<Student> getAllStudent() {
@@ -76,11 +80,28 @@ public class StudentServiceImpl implements StudentService {
         list.forEach(student -> {
             StudentDTO studentDTO = new StudentDTO();
             studentDTO.setHotensv(student.getFull_name());
-            studentDTO.setMasv(student.getStudent_id());
+            studentDTO.setMasv(student.getStudentId());
             studentDTO.setQuequan(student.getAddress());
             studentDTO.setNamsinh(student.getBirthday());
             listDTOs.add(studentDTO);
         });
         return listDTOs;
     }
+    // count so sinh vien khoa bio
+    @Override
+    public StudentDTO getCountBio(String studentId) {
+        return studentRepository.getCountBio(studentId);
+    }
+
+    @Override
+    public StudentDTO getCountBioNative(String studentId) {
+        Tuple tuple = studentRepository.getCountBioNative(studentId);
+        return new StudentDTO(tuple.get(0, BigInteger.class).longValue());
+    }
+
+
+    // thong tin sinh vien khoa math
+
+
+
 }

@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.example.bkacad.dto.StudentDTO;
 
+import com.example.bkacad.dto.TeacherDTO;
 import org.springframework.stereotype.Component;
 import com.example.bkacad.model.Student;
 
@@ -33,4 +34,13 @@ public interface StudentService {
      List<Student> getAllStudent();
 
      List<StudentDTO> findAll();
+
+     StudentDTO getCountBio(String facultyId);
+
+     StudentDTO getCountBioNative(String facultyId);
+
+
+
+
+
 }
