@@ -1,10 +1,8 @@
 package com.example.bkacad.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Value;
-
 import java.math.BigInteger;
-import java.nio.channels.InterruptedByTimeoutException;
+
 
 public class TeacherDTO {
     @JsonIgnore
