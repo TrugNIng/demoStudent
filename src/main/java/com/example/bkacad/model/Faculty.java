@@ -6,12 +6,13 @@ import javax.persistence.*;
 public class Faculty {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="makhoa")
     private Long id;
 
-    @Column(name = "faculty_name")
-    private String faculty_name;
+    @Column(name = "tenkhoa")
+    private String facultyName;
 
-    @Column(name = "phone")
+    @Column(name = "dienthoai")
     private String phone;
 
     public Long getId() {
@@ -22,12 +23,12 @@ public class Faculty {
         this.id = id;
     }
 
-    public String getFaculty_name() {
-        return faculty_name;
+    public String getFacultyName() {
+        return facultyName;
     }
 
-    public void setFaculty_name(String faculty_name) {
-        this.faculty_name = faculty_name;
+    public void setFacultyName(String faculty_name) {
+        this.facultyName = faculty_name;
     }
 
     public String getPhone() {
