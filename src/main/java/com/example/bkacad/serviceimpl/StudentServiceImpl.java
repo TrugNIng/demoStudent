@@ -52,7 +52,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> getAll() {
-        return null;
+        return studentRepository.findAll();
     }
 
     @Override
